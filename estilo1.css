@@ -39,9 +39,9 @@ input {
     right: 10px;
 }
 
-header{
+header {
     border: solid 1px;
-    
+
     padding-top: 5px;
     background: radial-gradient(green, rgb(5, 107, 5));
     color: white;
@@ -49,10 +49,10 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    
+
 }
 
-h1{
+h1 {
     margin: 60px;
 }
 
@@ -67,21 +67,28 @@ img {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    
+
 }
 
-#comeco{
+#comeco {
     text-align: center;
 }
 
-.tabuleiro{
-    margin-left: 30vw;
-}
 
-table, td, th{
+
+table,
+td,
+th {
     border: solid 1px black;
 }
 
 @media(max-width:600px) {
-    .content{ flex-direction: column;}
+    .content {
+        flex-direction: column;
+    }
+}
+
+.tabuleiro {
+    margin-left: 30vw;
+
 }

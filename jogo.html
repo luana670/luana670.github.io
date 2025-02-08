@@ -24,18 +24,18 @@
                 <a href="index.html">Sair</a><br>
             </div><br>
             <p>
-            <a href="home.html">Home</a>
-            <hr>
-            <a href="disciplinas.html">Disciplinas</a>
-            <hr>
-            <a href="notas.html">Notas</a>
-            <hr>
-            <a href="biblioteca.html">Biblioteca</a>
-            <hr>
-            <a href="boletim.html">Boletim</a>
-            <hr>
-            <a href="jogo.html">Jogo</a>
-            <hr>
+                <a href="home.html">Home</a>
+                <hr>
+                <a href="disciplinas.html">Disciplinas</a>
+                <hr>
+                <a href="notas.html">Notas</a>
+                <hr>
+                <a href="biblioteca.html">Biblioteca</a>
+                <hr>
+                <a href="boletim.html">Boletim</a>
+                <hr>
+                <a href="jogo.html">Jogo</a>
+                <hr>
             </p>
 
 
@@ -43,23 +43,23 @@
 
         <main>
             <form submit="aparecerTabuleiro()">
-            <h2> Jogo da Velha</h2>
-            Player 1: <input type="text"  id="player1" >
-            Player 2: <input type="text"  id="player2" >
-            <button id="comeco" onclick="aparecerTabuleiro()">Jogar</button>
-           <p><div class="tabuleiro " id="tab" style="display: none;">
-                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
-                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
-                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
-                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
-                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
-                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
-                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
-                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
-                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
-            </div></p>
-            <div id="vencedor"></div>
-            <button id="reset" style="display: none" onclick="location.reload()">Reset</button>
+                <h2> Jogo da Velha</h2>
+                Player 1: <input type="text" id="player1" required>
+                Player 2: <input type="text" id="player2" required>
+                <button id="comeco" onclick="aparecerTabuleiro()">Jogar</button>
+                <div class="tabuleiro " id="tab" style="display: none;">
+                    <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                    <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                    <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                    <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                    <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                    <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                    <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                    <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                    <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                </div>
+                <div id="vencedor"></div>
+                <button id="reset" style="display: none" onclick="location.reload()">Reset</button>
             </form>
         </main>
     </div>
