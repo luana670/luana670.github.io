@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Meu SIGA</title>
+    <link rel="stylesheet" type="text/css" href="estilo1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body style="margin: 0;">
+    <a href="#"><ion-icon name="arrow-round-up" id="topo"></ion-icon></a>
+
+    <header>
+        <h1>Sistema Acadêmico</h1>
+        <form action="home.html">
+            <input type="email" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required id="senha3"><ion-icon id="olho3" name="eye"  onclick="verSenha3()"></ion-icon>
+            <button type="submit">Logar</button>
+        </form>
+    </header>
+    <hr>
+    <div class="content">
+        <nav>
+            <a href="https://www.ifms.edu.br/" target="_blank">Site do IFMS</a>
+            <hr>
+        </nav>
+
+        <main>
+            <h2>Cadastre-se</h2>
+            <form action="home.html">
+                <p>Nome: <input type="text" placeholder="Seu nome" required><br></p>
+                <p>E-mail: <input type="email" placeholder="E-mail" required><br></p>
+                <p>
+                <div id="paiSenha1">
+                    Senha:
+                    <input type="password" id="senha1" onchange="verificarSenha()" placeholder="Senha">
+                    <ion-icon id="olho" name="eye" onclick="verSenha()"></ion-icon>
+                </div>
+                </p>
+
+                <p>
+                <div id="paiSenha2">
+                    Repetir Senha: <input type="password" required id="senha2" onchange="verificarSenha()"
+                        placeholder="Repitir senha">
+                    <ion-icon id="olho2" name="eye" onclick="verSenha()"></ion-icon>
+                </div>
+                </p>
+                <p>Foto: <input type="file" id="foto"><br></p>
+                <p>CPF (Somente números): <input type="text" required placeholder="CPF"></p>
+                <p>Data de Nascimento (dd/mm/aaaa): <input type="date" required><br></p>
+
+                <p>Tipo de Perfil:
+                    <select required>
+                        <option value="estudante">Estudante</option>
+                        <option value="prof">Professor</option>
+                    </select><br>
+                </p>
+                <p><button type="submit">Cadastrar</button></p>
+            </form>
+
+        </main>
+        <section>
+            <h2>Últimas notícias</h2>
+            <p>Aberto processo seletivo</p>
+        </section>
+    </div>
+    <footer>
+        <hr>
+        <p>&copy;Todos os direitos reservados;</p>
+    </footer>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script>
+        var contClique = 0;
+
+        function verSenha() {
+            contClique++;
+            var olho = document.querySelector('#olho');
+            var objInput = document.querySelector('#senha1');
+
+            if (contClique % 2 == 1) {
+                //mudar o type do input para text
+                objInput.type = 'text';
+                //mudar o name do olho para eye-off
+                olho.setAttribute('name', 'eye-off');
+            } else {
+                //voltar o type do input para password
+                objInput.type = 'password';
+                //voltar o name do olho para eye
+                olho.setAttribute('name', 'eye');
+            }
+        }
+
+        var contClique = 0;
+
+        function verSenha2() {
+            contClique++;
+            var olho = document.querySelector('#olho2');
+            var objInput = document.querySelector('#senha2');
+
+            if (contClique % 2 == 1) {
+                //mudar o type do input para text
+                objInput.type = 'text';
+                //mudar o name do olho para eye-off
+                olho.setAttribute('name', 'eye-off');
+            } else {
+                //voltar o type do input para password
+                objInput.type = 'password';
+                //voltar o name do olho para eye
+                olho.setAttribute('name', 'eye');
+            }
+        }
+
+        function verificarSenha() {
+            //vamos pegar os dois input da senha
+            var s1 = document.querySelector('#senha1');
+            var s2 = document.querySelector('#senha2');
+            var qntdTagB = document.querySelectorAll("div#paiSenha1 > b")
+            var div1 = document.querySelector('#paiSenha1');
+
+            //vamos verificar se as senhas são diferentes
+
+            if (s1.value != '' && s2.value != '' && s1.value != s2.value) {
+                //deixe as bordass vermelhas
+                s1.style.borderColor = 'red';
+                s2.style.borderColor = 'red';
+                //Criar o texto html com js
+                if (qntdTagB.length == 0)
+                    var texto1 = document.createTextNode('*senhas diferentes');
+                //criar a tag b
+                var b_tag = document.createElement('b');
+                //anexar o texto dentro da tag b
+                b_tag.appendChild(texto1);
+                //deixar o texto vermelho
+                b_tag.style.color = 'red';
+                //pegar a div com id paiSenha
+                //var div1 = document.querySelector('#paiSenha1');
+                //anexar a tag como filho da div
+                div1.appendChild(b_tag);
+            } else {
+                //deixar as bordas pretas
+                s1.style.borderColor = 'black';
+                s2.style.borderColor = 'black';
+                div1.removeChild(qntdTagB[0]);
+            }
+            verificarSenha2()
+        }
+
+        function verificarSenha2() {
+            //vamos pegar os dois input da senha
+            var s1 = document.querySelector('#senha1');
+            var s2 = document.querySelector('#senha2');
+            var qntdTag = document.querySelectorAll("div#paiSenha2 > b")
+            var div2 = document.querySelector('#paiSenha2');
+
+            //vamos verificar se as senhas são diferentes
+
+            if (s1.value != '' && s2.value != '' && s1.value != s2.value) {
+                //deixe as bordass vermelhas
+                s1.style.borderColor = 'red';
+                s2.style.borderColor = 'red';
+                //Criar o texto html com js
+                if (qntdTag.length == 0)
+                    var texto2 = document.createTextNode('*senhas diferentes');
+                //criar a tag b
+                var tag_b = document.createElement('b');
+                //anexar o texto dentro da tag b
+                tag_b.appendChild(texto2);
+                //deixar o texto vermelho
+                tag_b.style.color = 'red';
+                //pegar a div com id paiSenha
+                // var div2 = document.querySelector('#paiSenha2');
+                //anexar a tag como filho da div
+                div2.appendChild(tag_b);
+            } else {
+                //deixar as bordas pretas
+                s1.style.borderColor = 'black';
+                s2.style.borderColor = 'black';
+
+                div2.removeChild(qntdTag[0]);
+
+            }
+
+        }
+
+        function verSenha3() {
+            contClique++;
+            var olho = document.querySelector('#olho3');
+            var objInput = document.querySelector('#senha3');
+
+            if (contClique % 2 == 1) {
+                //mudar o type do input para text
+                objInput.type = 'text';
+                //mudar o name do olho para eye-off
+                olho.setAttribute('name', 'eye-off');
+            } else {
+                //voltar o type do input para password
+                objInput.type = 'password';
+                //voltar o name do olho para eye
+                olho.setAttribute('name', 'eye');
+            }
+        }
+
+
+
+    </script>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"> </script>
+</body>
+
+</html>

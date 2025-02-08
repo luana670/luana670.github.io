@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Meu SIGA</title>
+    <link rel="stylesheet" type="text/css" href="estilo1.css">
+    <link rel="stylesheet" type="text/css" href="estiloJogo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <a href="#"><ion-icon name="arrow-round-up" id="topo"></ion-icon></a>
+    <header>
+        <h1>Sistema Acadêmico - Jogo</h1>
+    </header>
+    <hr>
+    <div class="content">
+        <nav>
+            <div id="comeco">
+                <img src="imagem.jpg"><br>
+
+                <a href="">Conta</a> |
+                <a href="index.html">Sair</a><br>
+            </div><br>
+            <p>
+            <a href="home.html">Home</a>
+            <hr>
+            <a href="disciplinas.html">Disciplinas</a>
+            <hr>
+            <a href="notas.html">Notas</a>
+            <hr>
+            <a href="biblioteca.html">Biblioteca</a>
+            <hr>
+            <a href="boletim.html">Boletim</a>
+            <hr>
+            <a href="jogo.html">Jogo</a>
+            <hr>
+            </p>
+
+
+        </nav>
+
+        <main>
+            <h2> Jogo da Velha</h2>
+            Player 1: <input type="text"  id="player1" >
+            Player 2: <input type="text"  id="player2" >
+            <button id="comeco" onclick="aparecerTabuleiro()">Jogar</button>
+           <p><div class="tabuleiro " id="tab" style="display: none;">
+                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+                <div class="quadrado" onclick="jogar(event); this.onclick=null;"></div>
+            </div></p>
+            <div id="vencedor"></div>
+            <button id="reset" style="display: none" onclick="location.reload()">Reset</button>
+        </main>
+    </div>
+    <footer>
+        <hr>
+        <a class="btn" href="index.html">Voltar</a>
+        <p>&copy;Todos os direitos reservados;</p>
+    </footer>
+    <script src="jogo.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"> </script>
+</body>
+
+</html>
